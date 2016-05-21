@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,20 +28,15 @@
               <h3 class="masthead-brand">Rufeng (Brody) Chen</h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="work.html">Work</a></li>
-                  <li><a href="contact.html">Contact</a></li>
+                  <li class="active"><a href="/#/">Home</a></li>
+                  <li><a href="/#/work">Work</a></li>
+                  <li><a href="/#/contact">Contact</a></li>
                 </ul>
               </nav>
             </div>
           </div>
 
-          <div class="inner cover">
-            <h1 class="cover-heading">Hi, I'm Brody!</h1>
-            <p class="lead">I am a <b>passionate</b> web developer who is always learning and evolving. My journey of development started with <a href="https://profiles.udacity.com/u/rufengchen" target="_blank"><i>Udacity</i></a>. And right now I'm working at <a href="http://palmdrive.cn/" target="_blank"><i>PalmDrive</i></a> as a full-stack.</p>
-            <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Learn more</a>
-            </p>
+          <div class="inner cover" ng-view>
           </div>
 
           <div class="mastfoot">
@@ -57,5 +52,8 @@
     ================================================== -->
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
