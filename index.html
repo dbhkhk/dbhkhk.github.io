@@ -13,7 +13,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <!-- Custom styles -->
     <link href="css/cover.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
@@ -22,26 +22,55 @@
   <body>
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
-        <div class="cover-container">
+        <div class="cover-container" ng-controller="MainController">
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">Rufeng (Brody) Chen</h3>
+              <h3 class="masthead-brand" ng-click="select('home')"><a href="" class="no-underline">Rufeng (Brody) Chen</a></h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="/#/">Home</a></li>
-                  <li><a href="/#/work">Work</a></li>
-                  <li><a href="/#/contact">Contact</a></li>
+                  <!-- TODO: use ng-repeat -->
+                  <li ng-class="{active: selectedPage === 'home'}"><a href="" ng-click="select('home')">Home</a></li>
+                  <li ng-class="{active: selectedPage === 'work'}"><a href="" ng-click="select('work')">Work</a></li>
+                  <li ng-class="{active: selectedPage === 'contact'}"><a href="" ng-click="select('contact')">Contact</a></li>
                 </ul>
               </nav>
             </div>
           </div>
 
-          <div class="inner cover" ng-view>
+          <div class="inner cover" ng-if="selectedPage === 'home'">
+            <h1 class="cover-heading"></h1>
+            <p class="lead">Front-End Web Developer</p>
+            <p class="lead">
+              <a href="" class="btn btn-lg btn-default" ng-click="select('work')">See my work</a>
+            </p>
+          </div>
+
+          <div class="inner cover" ng-if="selectedPage === 'work'">
+            <div class="row text-center">
+              <div class="col-md-4 col-sm-6" ng-repeat="work in works">
+                <a href="{{work.url}}" target="_blank">
+                  <img class="app-pic img-responsive"
+                  src="{{work.img}}" alt="{{work.name}}">
+                </a>
+                <a href="{{work.url}}" target="_blank">
+                  <h4>{{work.name}}</h4>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="inner cover" ng-if="selectedPage === 'contact'">
+            <i class="fa fa-envelope" aria-hidden="true"></i> rufengch@gmail.com
+            <br>
+            <br>
+            <br>
+            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
           </div>
 
           <div class="mastfoot">
             <div class="inner">
-              <p>Made with ♥ and <a href="http://getbootstrap.com">Bootstrap</a>.</p>
+              <p>Made with ♥, <a href="https://angularjs.org/">AngularJS</a> and <a href="http://getbootstrap.com">Bootstrap</a>.</p>
             </div>
           </div>
         </div>
@@ -53,7 +82,6 @@
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/angular.min.js"></script>
-    <script src="js/angular-route.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

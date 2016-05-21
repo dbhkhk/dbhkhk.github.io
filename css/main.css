@@ -1,0 +1,8 @@
+.no-underline:hover,
+.no-underline:focus {
+  text-decoration: none;
+}
+
+.app-pic {
+  border-radius: 20px;
+}

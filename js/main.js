@@ -1,33 +1,28 @@
-angular.module('myApp', ['ngRoute'])
+angular.module('myApp', [])
  
-.config(function($routeProvider) {
-  $routeProvider
-    .when('/', {
-      controller:'HomeController',
-      templateUrl:'../template/home.html'
-    })
-    .when('/work', {
-      controller:'WorkController',
-      templateUrl:'../template/work.html'
-    })
-    .when('/contact', {
-      controller:'ContactController',
-      templateUrl:'../template/contact.html'
-    })
-    .otherwise({
-      redirectTo:'/'
-    });
-})
- 
-.controller('HomeController', ['$scope', function($scope) {
+.controller('MainController', ['$scope', function($scope) {
+  $scope.selectedPage = 'home';
 
-}])
- 
-.controller('WorkController', ['$scope', function($scope) {
+  $scope.select = function(page) {
 
-}])
+    $scope.selectedPage = page;
+  };
 
- 
-.controller('ContactController', ['$scope', function($scope) {
-
+  $scope.works = [
+    {
+      name: 'PalmDrive Inc.',
+      url: 'http://palmdrive.cn/',
+      img: 'img/palmdrive.jpg'
+    },
+    {
+      name: 'Neighborhood Map',
+      url: 'http://dbhkhk.github.io/neighborhood-map/',
+      img: 'img/neighborhood-map.jpg'
+    },
+    {
+      name: 'Arcade Game Clone',
+      url: 'http://dbhkhk.github.io/frontend-nanodegree-arcade-game/',
+      img: 'img/arcade_game_500.jpg'
+    }
+  ];
 }]);
