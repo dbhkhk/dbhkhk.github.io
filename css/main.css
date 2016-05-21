@@ -3,6 +3,24 @@
   text-decoration: none;
 }
 
+.head-img {
+  width: 150px;
+  border-radius: 50%;
+  margin: 20px auto 20px;
+}
+
 .app-pic {
   border-radius: 20px;
+  margin: auto;
+  max-width: 360px;
+}
+
+.icon-link {
+  margin: 0 20px;
+}
+
+@media (min-width: 768px) {
+  .app-pic {
+    max-width: 100%;
+  }
 }

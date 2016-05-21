@@ -25,4 +25,9 @@ angular.module('myApp', [])
       img: 'img/arcade_game_500.jpg'
     }
   ];
+
+  $scope.myInfo = {
+    github: 'https://github.com/dbhkhk',
+    linkedIn: 'https://www.linkedin.com/in/brodychen'
+  }
 }]);

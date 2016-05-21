@@ -28,7 +28,6 @@
               <h3 class="masthead-brand" ng-click="select('home')"><a href="" class="no-underline">Rufeng (Brody) Chen</a></h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <!-- TODO: use ng-repeat -->
                   <li ng-class="{active: selectedPage === 'home'}"><a href="" ng-click="select('home')">Home</a></li>
                   <li ng-class="{active: selectedPage === 'work'}"><a href="" ng-click="select('work')">Work</a></li>
                   <li ng-class="{active: selectedPage === 'contact'}"><a href="" ng-click="select('contact')">Contact</a></li>
@@ -39,6 +38,7 @@
 
           <div class="inner cover" ng-if="selectedPage === 'home'">
             <h1 class="cover-heading"></h1>
+            <img class="img-responsive head-img" src="img/head.jpg">
             <p class="lead">Front-End Web Developer</p>
             <p class="lead">
               <a href="" class="btn btn-lg btn-default" ng-click="select('work')">See my work</a>
@@ -47,7 +47,7 @@
 
           <div class="inner cover" ng-if="selectedPage === 'work'">
             <div class="row text-center">
-              <div class="col-md-4 col-sm-6" ng-repeat="work in works">
+              <div class="col-md-4 col-sm-4" ng-repeat="work in works">
                 <a href="{{work.url}}" target="_blank">
                   <img class="app-pic img-responsive"
                   src="{{work.img}}" alt="{{work.name}}">
@@ -60,12 +60,18 @@
           </div>
 
           <div class="inner cover" ng-if="selectedPage === 'contact'">
-            <i class="fa fa-envelope" aria-hidden="true"></i> rufengch@gmail.com
+            <a href="mailto:rufengch@gmail.com">
+              <i class="fa fa-envelope" aria-hidden="true"></i> rufengch@gmail.com
+            </a>
             <br>
             <br>
             <br>
-            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-            <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+            <a href="{{myInfo.github}}" class="no-underline">
+              <i class="fa fa-github fa-3x icon-link" aria-hidden="true"></i>
+            </a>
+            <a href="{{myInfo.linkedIn}}" class="no-underline">
+              <i class="fa fa-linkedin fa-3x icon-link" aria-hidden="true"></i>
+            </a>
           </div>
 
           <div class="mastfoot">
