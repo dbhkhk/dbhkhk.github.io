@@ -46,8 +46,7 @@
           </div>
 
           <div class="inner cover" ng-if="selectedPage === 'work'">
-            <div class="row text-center">
-              <div class="col-md-4 col-sm-4" ng-repeat="work in works">
+            <div class="row text-center" ng-repeat="work in works">
                 <a href="{{work.url}}" target="_blank">
                   <img class="app-pic img-responsive"
                   src="{{work.img}}" alt="{{work.name}}">
@@ -55,7 +54,6 @@
                 <a href="{{work.url}}" target="_blank">
                   <h4>{{work.name}}</h4>
                 </a>
-              </div>
             </div>
           </div>
 

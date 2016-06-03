@@ -20,7 +20,11 @@
 }
 
 @media (min-width: 768px) {
+  .masthead {
+    margin-bottom: 30px;
+  }
+
   .app-pic {
-    max-width: 100%;
+    max-width: 360px;
   }
 }
